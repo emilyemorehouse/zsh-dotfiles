@@ -1,0 +1,25 @@
+# OS
+.DS_Store
+Desktop.ini
+.Trashes
+*~
+
+# Thumbnail cache files
+._*
+Thumbs.db
+
+# Files that might appear on external disks
+.Spotlight-V100
+.Trashes
+
+# Virtualenvs (just in case)
+env/
+env/*
+env2/
+env2/*
+
+# Python/Frameworks/Apps
+*.log
+*.pot
+*.pyc
+local_settings.py

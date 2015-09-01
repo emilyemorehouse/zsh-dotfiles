@@ -12,9 +12,9 @@
       "~/.nvm": "nvm/",
       "~/.vim": "vim/",
       "~/.vimrc": "vimrc",
-       "~/.gitignore": ".gitignore"
       "~/.screenrc": "screenrc",
       "~/.gitconfig": "gitconfig",
+      "~/.gitignore_global": "gitignore_global",
       "~/.hgrc": "hgrc",
       "~/.hgignore_global": "hgignore_global",
     }
