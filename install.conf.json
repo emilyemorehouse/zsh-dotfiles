@@ -19,7 +19,8 @@
   },
   {
     "shell": [
-      ["git submodule update --init --recursive", "Installing submodules"]
+      ["git submodule update --init --recursive", "Installing submodules"],
+      ["cp zsh-custom/themes/*.zsh-theme ~/.oh-my-zsh/themes/"]
     ]
   }
 ]
