@@ -8,3 +8,11 @@ alias whois="whois -h whois-servers.net"
 
 # Flush Directory Service cache
 alias flush="sudo discoveryutil mdnsflushcache && dscacheutil -flushcache && killall -HUP mDNSResponder"
+
+alias c="clear"
+function cl () {
+  cd "$@" && clear && ls -laAhF
+}
+function md () {
+  mkdir -p "$@" && cl "$@"
+}
