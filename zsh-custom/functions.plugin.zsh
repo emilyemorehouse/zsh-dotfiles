@@ -1,6 +1,13 @@
-# Create a new directory and enter it
-function mkd() {
-  mkdir -p "$@" && cd "$@"
+# Auto list directory when changing
+function cl () {
+  cd "$@" && clear && ls -laAhF
+}
+# Change and list directory on creation
+function md () {
+  mkdir -p "$@" && cl "$@"
+}
+function make_screens() {
+    pageres http://localhost:8100/"$@" < ~/Development/CuttleDev/Projects/screen-resolutions.txt
 }
 
 # Determine size of a file or total size of a directory
