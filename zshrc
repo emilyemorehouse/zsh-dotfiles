@@ -107,3 +107,5 @@ include $HOME/.extra
 
 # added by travis gem
 [ -f /Users/choage5/.travis/travis.sh ] && source /Users/choage5/.travis/travis.sh
+
+source /usr/local/bin/virtualenvwrapper.sh
