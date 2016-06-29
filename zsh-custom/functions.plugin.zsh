@@ -6,8 +6,35 @@ function cl () {
 function md () {
   mkdir -p "$@" && cl "$@"
 }
-function make_screens() {
-    pageres http://localhost:8100/"$@" < ~/Development/CuttleDev/Projects/screen-resolutions.txt
+function makescreens() {
+  pageres http://localhost:8100/"$@" < ~/Development/CuttleDev/Projects/screen-resolutions.txt
+}
+
+# Clone down Cuttlesoft repository
+function cuttleclone() {
+  hg clone ssh://hg@bitbucket.org/cuttlesoft/"$@"
+}
+
+# Make resources for an Ionic project with different icons for each platform
+function ionicresources() {
+  mkdir resources/.tmp
+
+  cp -f resources/icon-ios.psd resources/icon.psd
+  ionic resources --icon
+
+  mv -f resources/ios/icon/* resources/.tmp
+  rm -f resources/icon.psd
+
+  cp -f resources/icon-android.psd resources/icon.psd
+  ionic resources --icon
+
+  rm -f resources/ios/icon/*
+  mv -f resources/.tmp/* resources/ios/icon
+
+  rm -rf resources/.tmp
+  rm -f resources/icon.psd
+
+  ionic resources --splash
 }
 
 # Determine size of a file or total size of a directory
