@@ -108,4 +108,9 @@ include $HOME/.extra
 # added by travis gem
 [ -f /Users/choage5/.travis/travis.sh ] && source /Users/choage5/.travis/travis.sh
 
-source /usr/local/bin/virtualenvwrapper.sh
+export PATH="/Library/Frameworks/Python.framework/Versions/2.7/bin/python:${PATH}"
+export PYTHONPATH=/Library/Frameworks/Python.framework/Versions/2.7/bin/python
+export WORKON_HOME=$HOME/.virtualenvs
+export PROJECT_HOME=$HOME/Development
+VIRTUALENVWRAPPER_PYTHON=/Library/Frameworks/Python.framework/Versions/2.7/bin/python
+source /Library/Frameworks/Python.framework/Versions/2.7/bin/virtualenvwrapper.sh
