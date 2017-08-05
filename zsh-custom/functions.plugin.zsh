@@ -12,7 +12,11 @@ function makescreens() {
 
 # Clone down Cuttlesoft repository
 function cuttleclone() {
-  hg clone ssh://hg@bitbucket.org/cuttlesoft/"$@"
+  git clone ssh://git@bitbucket.org/cuttlesoft/"$@".git
+}
+
+function cuttleproject() {
+  cl ~/Development/CuttleDev/Projects/Clients/"$@"
 }
 
 # Make resources for an Ionic project with different icons for each platform
