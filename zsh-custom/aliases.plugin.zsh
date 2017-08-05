@@ -47,12 +47,3 @@ alias mysql.start="sudo /usr/local/mysql/support-files/mysql.server start"
 alias mysql.stop="sudo /usr/local/mysql/support-files/mysql.server stop"
 alias mysql.restart="sudo /usr/local/mysql/support-files/mysql.server restart"
 alias mysql.status="sudo /usr/local/mysql/support-files/mysql.server status"
-
-
-# ANDROID PATH SETTINGS
-export ANDROID_HOME='/Users/emilyemorehouse/Development/Resources/android-sdk-macosx'
-# export PATH=${PATH}:$ANDROID_HOME/bin
-# export PATH=${PATH}:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
-export ANT_HOME="/opt/ant"
-export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:$ANT_HOME/bin"
-export PATH=${PATH}:/Users/emilyemorehouse/Development/android-sdk-macosx/tools:/Users/emilyemorehouse/Development/android-sdk-macosx/platform-tools

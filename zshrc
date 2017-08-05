@@ -20,10 +20,10 @@ DISABLE_AUTO_UPDATE="true"
 # DISABLE_LS_COLORS="true"
 
 # Uncomment the following line to disable auto-setting terminal title.
-DISABLE_AUTO_TITLE="true"
+# DISABLE_AUTO_TITLE="true"
 
 # Uncomment the following line to enable command auto-correction.
-ENABLE_CORRECTION="false"
+ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
 COMPLETION_WAITING_DOTS="true"
@@ -37,8 +37,6 @@ COMPLETION_WAITING_DOTS="true"
 # stamp shown in the history command output.
 # The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
 # HIST_STAMPS="mm/dd/yyyy"
-
-APPEND_HISTORY="true"
 
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets)
 
@@ -60,12 +58,6 @@ case `uname` in
 esac
 
 plugins=($plugins zsh-syntax-highlighting)
-
-export PATH="$HOME/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
-export MANPATH="/usr/local/man:$MANPATH"
-
-#nvm config
-export NVM_DIR=$HOME/.nvm
 
 source $ZSH/oh-my-zsh.sh
 
@@ -103,9 +95,29 @@ export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 
 include $HOME/.extra
 
-#export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
-
 # added by travis gem
 [ -f /Users/choage5/.travis/travis.sh ] && source /Users/choage5/.travis/travis.sh
 
+# virtualenvwrapper
+export VIRTUALENVWRAPPER_PYTHON=/usr/local/opt/python/libexec/bin/python
 source /usr/local/bin/virtualenvwrapper.sh
+
+# nvm config
+export NVM_DIR=$HOME/.nvm
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+
+# custom path settings
+export MANPATH=/usr/local/man:$MANPATH
+export PATH=$HOME/bin:/usr/local/opt/python/libexec/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/9.6/bin
+export PATH=$PATH:$HOME/.fastlane/bin
+
+# android path settings
+export ANDROID_HOME=$HOME/Development/Resources/android-sdk-macosx
+export PATH=${PATH}:$ANDROID_HOME/bin
+export PATH=${PATH}:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$ANDROID_HOME/build-tools/23.0.2
+
+export SHELL=/bin/zsh
+
+APPEND_HISTORY="true"
+unsetopt share_history
