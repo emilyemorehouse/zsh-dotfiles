@@ -1,5 +1,7 @@
+# ------------------------------- ZSH SETTINGS ------------------------------- #
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
+export SHELL=/bin/zsh
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -46,6 +48,7 @@ bindkey "^[[B" history-beginning-search-forward
 # Would you like to use another custom folder than $ZSH/custom?
 ZSH_CUSTOM=$HOME/.zsh-custom
 
+# -------------------------------- ZSH PLUGINS ------------------------------- #
 plugins=(cake git sublime osx git-flow git-extras node battery nvm rvm npm rsync sublime common-aliases web-search functions aliases)
 
 case `uname` in
@@ -59,11 +62,10 @@ esac
 
 plugins=($plugins zsh-syntax-highlighting)
 
+# --------------------------------- ZSH INIT --------------------------------- #
 source $ZSH/oh-my-zsh.sh
 
-# You may need to manually set your language environment
-export LANG=en_US.UTF-8
-
+# ------------------------------- MISC SETTINGS ------------------------------ #
 # Make vim the default editor
 export EDITOR="vim"
 
@@ -98,14 +100,17 @@ include $HOME/.extra
 # added by travis gem
 [ -f /Users/choage5/.travis/travis.sh ] && source /Users/choage5/.travis/travis.sh
 
-# virtualenvwrapper
-export VIRTUALENVWRAPPER_PYTHON=/usr/local/opt/python/libexec/bin/python
-source /usr/local/bin/virtualenvwrapper.sh
-
 # nvm config
 export NVM_DIR=$HOME/.nvm
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
+# virtualenvwrapper
+export VIRTUALENVWRAPPER_PYTHON=/usr/local/opt/python/libexec/bin/python
+
+# -------------------------- VIRTUALENVWRAPPER INIT -------------------------- #
+source /usr/local/bin/virtualenvwrapper.sh
+
+# ------------------------------- PATH SETTINGS ------------------------------ #
 # custom path settings
 export MANPATH=/usr/local/man:$MANPATH
 export PATH=$HOME/bin:/usr/local/opt/python/libexec/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
@@ -117,7 +122,6 @@ export ANDROID_HOME=$HOME/Development/Resources/android-sdk-macosx
 export PATH=${PATH}:$ANDROID_HOME/bin
 export PATH=${PATH}:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$ANDROID_HOME/build-tools/23.0.2
 
-export SHELL=/bin/zsh
-
+# --------------------- PICKY ZSH SETTINGS (leave at end) -------------------- #
 APPEND_HISTORY="true"
 unsetopt share_history
