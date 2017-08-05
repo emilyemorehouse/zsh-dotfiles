@@ -22,6 +22,10 @@ alias mktv='mktmpenv'
 alias mkv3='mkvirtualenv --python=/usr/local/bin/python3'
 alias rmv='rmvirtualenv'
 
+alias l='ls -laAhF'
+alias dir='ls -a'
+alias rm='rmtrash'
+
 # Ionic Helpers
 alias platform_reset='ios_reset && android_reset'
 alias ios_reset='ionic platform rm ios && ionic platform add ios'
