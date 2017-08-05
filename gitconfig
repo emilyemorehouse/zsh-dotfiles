@@ -69,6 +69,7 @@
 	trustctime = false
 	# Custom editor
 	editor = vim
+	pager = diff-so-fancy | less --tabs=4 -RFX
 
 [color]
 	# Use colors in Git commands that are capable of colored output when
@@ -119,3 +120,10 @@
 
 [credential]
 	helper = osxkeychain
+[commit]
+	template = /Users/emilyemorehouse/.stCommitMsg
+[color "diff-highlight"]
+	oldNormal = red bold
+	oldHighlight = red bold 52
+	newNormal = green bold
+	newHighlight = green bold 22
