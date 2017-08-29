@@ -113,7 +113,7 @@ source /usr/local/bin/virtualenvwrapper.sh
 # ------------------------------- PATH SETTINGS ------------------------------ #
 # custom path settings
 export MANPATH=/usr/local/man:$MANPATH
-export PATH=$HOME/bin:/usr/local/opt/python/libexec/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+export PATH=$PATH:HOME/bin:/usr/local/opt/python/libexec/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
 export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/9.6/bin
 export PATH=$PATH:$HOME/.fastlane/bin
 
@@ -121,6 +121,10 @@ export PATH=$PATH:$HOME/.fastlane/bin
 export ANDROID_HOME=$HOME/Development/Resources/android-sdk-macosx
 export PATH=${PATH}:$ANDROID_HOME/bin
 export PATH=${PATH}:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$ANDROID_HOME/build-tools/23.0.2
+
+# RVM path settings
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+export PATH="$PATH:/Users/emilyemorehouse/.rvm/gems/ruby-2.2.1/bin"
 
 # --------------------- PICKY ZSH SETTINGS (leave at end) -------------------- #
 APPEND_HISTORY="true"
