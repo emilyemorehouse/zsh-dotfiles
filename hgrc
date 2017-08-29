@@ -4,5 +4,6 @@ ignore = ~/.hgignore
 
 [extensions]
 prompt = ~/Development/Configs/hg-prompt/prompt.py
+hggit =
 # mq =
 
