@@ -24,21 +24,21 @@ function ionicresources() {
   mkdir resources/.tmp
 
   cp -f resources/icon-ios.psd resources/icon.psd
-  ionic resources --icon
+  ionic cordova resources --icon
 
   mv -f resources/ios/icon/* resources/.tmp
-  rm -f resources/icon.psd
+  rm resources/icon.psd
 
   cp -f resources/icon-android.psd resources/icon.psd
-  ionic resources --icon
+  ionic cordova resources --icon
 
-  rm -f resources/ios/icon/*
+  rm resources/ios/icon/*
   mv -f resources/.tmp/* resources/ios/icon
 
-  rm -rf resources/.tmp
-  rm -f resources/icon.psd
+  rm resources/.tmp
+  rm resources/icon.psd
 
-  ionic resources --splash
+  ionic cordova resources --splash
 }
 
 # Determine size of a file or total size of a directory
