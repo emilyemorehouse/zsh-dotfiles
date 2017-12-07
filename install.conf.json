@@ -13,10 +13,11 @@
       "~/.vim": "vim/",
       "~/.vimrc": "vimrc",
       "~/.screenrc": "screenrc",
+      "~/.git-templates": "git-templates/",
       "~/.gitconfig": "gitconfig",
       "~/.gitignore_global": "gitignore_global",
       "~/.hgrc": "hgrc",
-      "~/.hgignore_global": "hgignore_global",
+      "~/.hgignore_global": "hgignore_global"
     }
   },
   {

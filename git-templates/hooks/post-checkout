@@ -1,0 +1,41 @@
+#!/bin/bash
+
+# Git post checkout hook.
+# Reminds you to update requirements, if necessary
+
+PREVIOUS_HEAD=$1
+NEW_HEAD=$2
+BRANCH_SWITCH=$3
+
+if [ $BRANCH_SWITCH == "1" -a $PREVIOUS_HEAD != $NEW_HEAD ]; then
+    # Start from the repository root.
+    cd ./$(git rev-parse --show-cdup)
+
+    # Check if requirements have been updated - pip
+    REQUIREMENTS=`git diff $PREVIOUS_HEAD $NEW_HEAD --name-status | grep "requirements.txt"`
+    if [ $? -eq "0" ]; then
+        echo -e "\nThe requirements for this project have changed. Update dependencies by running:"
+        echo -e "  pipenv install"
+    fi
+
+    # Check if requirements have been updated - pipenv
+    REQUIREMENTS=`git diff $PREVIOUS_HEAD $NEW_HEAD --name-status | grep "Pipfile.lock"`
+    if [ $? -eq "0" ]; then
+        echo -e "\nThe requirements for this project have changed. Update dependencies by running:"
+        echo -e "  pip install"
+    fi
+
+    # Check if requirements have been updated - npm/yarn
+    REQUIREMENTS=`git diff $PREVIOUS_HEAD $NEW_HEAD --name-status | grep "package.json"`
+    if [ $? -eq "0" ]; then
+        echo -e "\nThe requirements for this project have changed. Update dependencies by running:"
+        echo -e "  yarn install"
+    fi
+
+    # Check if submodules have been changed
+    MODULES=`git diff $PREVIOUS_HEAD $NEW_HEAD --name-status | grep "\.gitmodules$"`
+    if [ $? -eq "0" ]; then
+        echo -e "\nThe submodules in this project has changed. Update submodules by running:"
+        echo -e "  git submodule update --init"
+    fi
+fi
