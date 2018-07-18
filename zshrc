@@ -104,6 +104,10 @@ include $HOME/.extra
 export NVM_DIR=$HOME/.nvm
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
+# ASCII settings for click (http://click.pocoo.org/5/python3/)
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
+
 # virtualenvwrapper
 export VIRTUALENVWRAPPER_PYTHON=/usr/local/opt/python/libexec/bin/python
 
