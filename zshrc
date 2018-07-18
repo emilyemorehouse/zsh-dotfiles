@@ -173,6 +173,9 @@ export ANDROID_HOME=$HOME/Library/Android/sdk
 export PATH=${PATH}:$ANDROID_HOME/bin
 export PATH=${PATH}:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$ANDROID_HOME/build-tools/26.0.2
 
+# Yarn path settings
+export PATH=$PATH:$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin
+
 # --------------------- PICKY ZSH SETTINGS (leave at end) -------------------- #
 APPEND_HISTORY="true"
 unsetopt share_history
