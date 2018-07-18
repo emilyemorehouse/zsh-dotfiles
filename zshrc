@@ -123,7 +123,7 @@ export TTC_BOTS='tinycarebot,selfcare_bot,magicrealismbot'
 # export TTC_SAY_BOX='mario'
 
 # List of folders to look into for `git` commits, comma separated.
-export TTC_REPOS='~/Development/CuttleDev,~Development/OSS/Alive'
+export TTC_REPOS='~/Development/CuttleDev,~Development/OSS/Alive,~/Development/Conferences'
 
 # The max directory-depth to look for git repositories in
 # the directories defined with `TTC_REPOS`. Note that the deeper
