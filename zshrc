@@ -109,7 +109,7 @@ export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
 # virtualenvwrapper
-export VIRTUALENVWRAPPER_PYTHON=/usr/local/opt/python/libexec/bin/python
+export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python
 
 # -------------------------- VIRTUALENVWRAPPER INIT -------------------------- #
 source /usr/local/bin/virtualenvwrapper.sh
