@@ -162,7 +162,8 @@ export TTC_ACCESS_TOKEN_SECRET='...'
 # ------------------------------- PATH SETTINGS ------------------------------ #
 # custom path settings
 export MANPATH=/usr/local/man:$MANPATH
-export PATH=$PATH:HOME/bin:/usr/local/opt/python/libexec/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+export PATH=/usr/local/bin:$PATH  # give /usr/local/bin the highest precedence
+export PATH=$PATH:HOME/bin:/usr/local/opt/python/libexec/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin
 export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/9.6/bin
 export PATH=$PATH:$HOME/.fastlane/bin
 export PATH=$PATH:/usr/local/mysql/bin
