@@ -71,6 +71,7 @@
 	# Custom editor
 	editor = vim
 	pager = diff-so-fancy | less --tabs=4 -RFX
+	ignorecase = false
 
 [color]
 	# Use colors in Git commands that are capable of colored output when
@@ -96,7 +97,7 @@
 # Tools
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
+	path =
 
 [mergetool "sourcetree"]
 	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
