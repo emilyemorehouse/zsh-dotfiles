@@ -12,7 +12,7 @@ function makescreens() {
 
 # Clone down Cuttlesoft repository
 function cuttleclone() {
-  git clone ssh://git@bitbucket.org/cuttlesoft/"$@".git
+  git clone ssh://git@github.com/cuttlesoft/"$@".git
 }
 
 function cuttleproject() {
