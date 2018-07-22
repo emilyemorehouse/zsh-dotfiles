@@ -7,6 +7,7 @@
 
 [alias]
     today = !git log --since=midnight --author=\"$(git config user.name)\" --oneline
+    yesterday = !git log --since=yesterday.midnight --until=today.midnight --author=\"$(git config user.name)\" --oneline
     lg = log --graph --pretty=format:'%C(yellow)%h%Creset -%C(cyan)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
     le = log --oneline --decorate
     ll = log --pretty=format:%C(yellow)%h%Cred%d\
