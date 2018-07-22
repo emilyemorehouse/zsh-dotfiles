@@ -10,12 +10,8 @@
     yesterday = !git log --since=yesterday.midnight --until=today.midnight --author=\"$(git config user.name)\" --oneline
     lg = log --graph --pretty=format:'%C(yellow)%h%Creset -%C(cyan)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
     le = log --oneline --decorate
-    ll = log --pretty=format:%C(yellow)%h%Cred%d\
-        %Creset%s%Cblue\
-        [%cn] --decorate --numstat
-    ls = log --pretty=format:%C(yellow)%h%Cred%d\
-        %Creset%s%Cblue\
-        [%cn] --decorate
+    ll = log --pretty=format:'%C(yellow) %h%C(cyan)%d%Creset%s%Cblue[%cn]' --decorate --numstat
+    ls = log --pretty=format:'%C(yellow) %h%C(cyan)%d%Creset%s%Cblue[%cn]' --decorate
     # Add interactively with --patch (https://git-scm.com/book/en/v2/Git-Tools-Interactive-Staging)
     a = add -p
     # View abbreviated SHA, description, and history graph of the latest 20 commits
