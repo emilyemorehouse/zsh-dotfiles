@@ -111,6 +111,9 @@ export LANG=en_US.UTF-8
 # virtualenvwrapper
 export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python
 
+# GPG Code Signing settings
+export GPG_TTY=$(tty)
+
 # -------------------------- VIRTUALENVWRAPPER INIT -------------------------- #
 source /usr/local/bin/virtualenvwrapper.sh
 
