@@ -28,6 +28,8 @@
     p = !"git pull; git submodule foreach git pull origin master"
     # Clone a repository including all submodules
     c = clone --recursive
+    # Commit with GPG signature
+    com = commit -S
     # Commit all changes
     ca = !git add -A && git commit -av
     # Switch to a branch, creating it if necessary
@@ -129,7 +131,7 @@
 [credential]
     helper = osxkeychain
 [commit]
-    template = /Users/emilyemorehouse/.stCommitMsg
+    gpgsign = true
 [color "diff-highlight"]
     oldNormal = red bold
     oldHighlight = red bold 52
@@ -137,3 +139,5 @@
     newHighlight = green bold 22
 [init]
     templatedir = ~/.git-templates
+[gpg]
+    program = gpg
