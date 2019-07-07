@@ -1,7 +1,14 @@
 # ----------------------------- File Navigation ------------------------------ #
 # Auto list directory when changing, given the directory name
 function cl () {
-  cd "$@" && clear && ls -laAhF
+  cd "$@" && clear
+
+  if test -f ".nvmrc"; then
+    echo "🔎🔎🔎 .nvmrc found - activating Node environment\n"
+    nvm use
+  fi
+
+  ls -laAhF
 }
 
 # Change into then list directory on creation, given the directory name
