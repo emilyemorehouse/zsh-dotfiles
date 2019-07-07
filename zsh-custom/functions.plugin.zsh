@@ -46,6 +46,12 @@ function branch-status() {
   git branch --merge
 }
 
+# Open the current repository in GitKraken
+function kraken() {
+  echo "🦑 Opening in GitKraken..."
+  open -na GitKraken --args -p "$(git rev-parse --show-toplevel)"
+}
+
 # --------------------------- Development Helpers ---------------------------- #
 # Generate screenshots using pageres
 function makescreens() {
