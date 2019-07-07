@@ -194,3 +194,17 @@ fi
 # --------------------- PICKY ZSH SETTINGS (leave at end) -------------------- #
 APPEND_HISTORY="true"
 unsetopt share_history
+
+# tabtab source for serverless package
+# uninstall by removing these lines or running `tabtab uninstall serverless`
+[[ -f /Users/emilyemorehouse/Development/CuttleDev/Projects/Clients/Barbershop/DealPatrol/com-dealpatrol-api/node_modules/tabtab/.completions/serverless.zsh ]] && . /Users/emilyemorehouse/Development/CuttleDev/Projects/Clients/Barbershop/DealPatrol/com-dealpatrol-api/node_modules/tabtab/.completions/serverless.zsh
+# tabtab source for sls package
+# uninstall by removing these lines or running `tabtab uninstall sls`
+[[ -f /Users/emilyemorehouse/Development/CuttleDev/Projects/Clients/Barbershop/DealPatrol/com-dealpatrol-api/node_modules/tabtab/.completions/sls.zsh ]] && . /Users/emilyemorehouse/Development/CuttleDev/Projects/Clients/Barbershop/DealPatrol/com-dealpatrol-api/node_modules/tabtab/.completions/sls.zsh
+
+autoload -U +X bashcompinit && bashcompinit
+complete -o nospace -C /usr/local/bin/vault vault
+
+# tabtab source for slss package
+# uninstall by removing these lines or running `tabtab uninstall slss`
+[[ -f /Users/emily/Development/CuttleDev/Projects/Clients/DealPatrol/dealpatrol.api/node_modules/tabtab/.completions/slss.zsh ]] && . /Users/emily/Development/CuttleDev/Projects/Clients/DealPatrol/dealpatrol.api/node_modules/tabtab/.completions/slss.zsh
