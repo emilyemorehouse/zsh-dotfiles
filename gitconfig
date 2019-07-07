@@ -38,6 +38,8 @@
     remotes = remote -v
     # Credit an author on the latest commit
     credit = "!f() { git commit --amend --author \"$1 <$2>\" -C HEAD; }; f"
+    # Credit my personal email on the multiple commits
+    mcredit = "!f() { git rebase -i $1 -x \"git commit --amend --author 'Emily Morehouse <emily@cuttlesoft.com>' -C HEAD\"; }; f"
     # Credit my personal email on the latest commit
     pcredit = "!f() { git commit --amend --author \"Emily Morehouse <emilyemorehouse@gmail.com>\" -C HEAD; }; f"
     # Credit my personal email on the multiple commits
