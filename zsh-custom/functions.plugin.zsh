@@ -1,8 +1,10 @@
-# Auto list directory when changing
+# ----------------------------- File Navigation ------------------------------ #
+# Auto list directory when changing, given the directory name
 function cl () {
   cd "$@" && clear && ls -laAhF
 }
-# Change and list directory on creation
+
+# Change into then list directory on creation, given the directory name
 function md () {
   mkdir -p "$@" && cl "$@"
 }
@@ -10,6 +12,8 @@ function makescreens() {
   pageres http://localhost:8100/"$@" < ~/Development/CuttleDev/Projects/screen-resolutions.txt
 }
 
+
+# ----------------------------------- Git ------------------------------------ #
 # Clone down Cuttlesoft repository
 function cuttleclone() {
   git clone ssh://git@github.com/cuttlesoft/"$@".git
@@ -41,6 +45,7 @@ function ionicresources() {
   ionic cordova resources --splash
 }
 
+# --------------------------------- Helpers ---------------------------------- #
 # Determine size of a file or total size of a directory
 function fs() {
   if du -b /dev/null > /dev/null 2>&1; then
