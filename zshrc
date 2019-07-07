@@ -104,6 +104,10 @@ include $HOME/.extra
 export NVM_DIR=$HOME/.nvm
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
+# chruby config
+source /usr/local/opt/chruby/share/chruby/chruby.sh
+source /usr/local/opt/chruby/share/chruby/auto.sh
+
 # ASCII settings for click (http://click.pocoo.org/5/python3/)
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
