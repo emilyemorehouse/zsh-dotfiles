@@ -26,6 +26,9 @@ alias l='ls -laAhF'
 alias dir='ls -a'
 alias rm='rmtrash'
 
+# React Native helpers
+alias fix-config-h='cd node_modules/react-native && ./scripts/ios-install-third-party.sh && cd third-party/glog-0.3.4 && ../../scripts/ios-configure-glog.sh && cd ../../../..'
+
 # Ionic Helpers
 alias platform_reset='ios_reset && android_reset'
 alias ios_reset='ionic platform rm ios && ionic platform add ios'
