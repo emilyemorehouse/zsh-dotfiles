@@ -194,6 +194,3 @@ fi
 # --------------------- PICKY ZSH SETTINGS (leave at end) -------------------- #
 APPEND_HISTORY="true"
 unsetopt share_history
-
-# ------------------------- RBENV INIT (leave at end) ------------------------ #
-eval "$(rbenv init -)"
