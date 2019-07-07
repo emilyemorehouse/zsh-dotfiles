@@ -30,6 +30,13 @@ function cuttleclone() {
 
 # Archive a branch
 # - Tag the branch as archived, continue only if successful
+# - Remove the branch locally
+# - Remove the branch on origin
+# - Push tag to remote
+function archive-branch() {
+  git tag archive/"$@" "$@" && git branch -D "$@"; git push origin :"$@"; git push origin archive/"$@"
+}
+
 # --------------------------- Development Helpers ---------------------------- #
 # Generate screenshots using pageres
 function makescreens() {
