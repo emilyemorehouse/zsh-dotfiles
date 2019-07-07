@@ -37,6 +37,15 @@ function archive-branch() {
   git tag archive/"$@" "$@" && git branch -D "$@"; git push origin :"$@"; git push origin archive/"$@"
 }
 
+# Display branch statuses
+function branch-status() {
+  echo "🙅🏻‍♀️ Not Merged:"
+  git branch --no-merge
+
+  echo "💁🏻‍♀️ Merged (or even):"
+  git branch --merge
+}
+
 # --------------------------- Development Helpers ---------------------------- #
 # Generate screenshots using pageres
 function makescreens() {
