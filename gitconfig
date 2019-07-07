@@ -26,8 +26,8 @@
     p = !"git pull; git submodule foreach git pull origin master"
     # Clone a repository including all submodules
     c = clone --recursive
-    # Commit with GPG signature
-    com = commit -S
+    # Commit with GPG signature and commit diff preview. My goto commit command
+    com = commit -S -v
     # Commit all changes
     ca = !git add -A && git commit -av
     # Switch to a branch, creating it if necessary
