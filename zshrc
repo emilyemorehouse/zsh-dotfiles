@@ -184,6 +184,13 @@ export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk1.8.0_181.jdk/Contents/Ho
 # Yarn path settings
 export PATH=$PATH:$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin
 
+# ------------------------------- PYENV SETTINGS ------------------------------ #
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+if command -v pyenv 1>/dev/null 2>&1; then
+  eval "$(pyenv init -)"
+fi
+
 # --------------------- PICKY ZSH SETTINGS (leave at end) -------------------- #
 APPEND_HISTORY="true"
 unsetopt share_history
