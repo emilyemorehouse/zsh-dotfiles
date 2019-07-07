@@ -125,6 +125,7 @@
     helper = osxkeychain
 [commit]
     gpgsign = true
+    template = ~/.gitmessage
 [color "diff-highlight"]
     oldNormal = red bold
     oldHighlight = red bold 52
