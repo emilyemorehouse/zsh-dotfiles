@@ -19,7 +19,7 @@ alias fix_mamp='ln -s /Applications/MAMP/tmp/mysql/mysql.sock /tmp/mysql.sock'
 alias py_ex='chmod +x *.py'
 alias mkv='mkvirtualenv'
 alias mktv='mktmpenv'
-alias mkv3='mkvirtualenv --python=/usr/local/bin/python3'
+alias mkv3='mkvirtualenv --python=$(which python3)'
 alias rmv='rmvirtualenv'
 
 alias l='ls -laAhF'
