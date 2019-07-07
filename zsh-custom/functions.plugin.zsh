@@ -15,8 +15,10 @@ function cl () {
 function md () {
   mkdir -p "$@" && cl "$@"
 }
-function makescreens() {
-  pageres http://localhost:8100/"$@" < ~/Development/CuttleDev/Projects/screen-resolutions.txt
+
+# Change into Cuttlesoft client project directory, given the project name
+function cuttleproject() {
+  cl ~/Development/CuttleDev/Projects/Clients/"$@"
 }
 
 
@@ -26,8 +28,12 @@ function cuttleclone() {
   git clone ssh://git@github.com/cuttlesoft/"$@".git
 }
 
-function cuttleproject() {
-  cl ~/Development/CuttleDev/Projects/Clients/"$@"
+# Archive a branch
+# - Tag the branch as archived, continue only if successful
+# --------------------------- Development Helpers ---------------------------- #
+# Generate screenshots using pageres
+function makescreens() {
+  pageres http://localhost:8100/"$@" < ~/Development/CuttleDev/Projects/screen-resolutions.txt
 }
 
 # Make resources for an Ionic project with different icons for each platform
