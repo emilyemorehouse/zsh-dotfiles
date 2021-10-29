@@ -42,9 +42,6 @@ COMPLETION_WAITING_DOTS="true"
 
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets)
 
-bindkey "^[[A" history-beginning-search-backward
-bindkey "^[[B" history-beginning-search-forward
-
 # Would you like to use another custom folder than $ZSH/custom?
 ZSH_CUSTOM=$HOME/.zsh-custom
 
@@ -89,96 +86,21 @@ export MANPAGER="less -X"
 # Link Homebrew casks in `/Applications` rather than `~/Applications`
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
-
-# ssh
-# export SSH_KEY_PATH="~/.ssh/dsa_id"
-
-include $HOME/.extra
-
-# added by travis gem
-[ -f /Users/choage5/.travis/travis.sh ] && source /Users/choage5/.travis/travis.sh
-
-# nvm config
-export NVM_DIR=$HOME/.nvm
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
-
-# chruby config
-source /usr/local/opt/chruby/share/chruby/chruby.sh
-source /usr/local/opt/chruby/share/chruby/auto.sh
-
-# ASCII settings for click (http://click.pocoo.org/5/python3/)
-export LC_ALL=en_US.UTF-8
-export LANG=en_US.UTF-8
-
-# virtualenvwrapper
-export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python
-
 # GPG Code Signing settings
 export GPG_TTY=$(tty)
-
-# -------------------------- VIRTUALENVWRAPPER INIT -------------------------- #
-source /usr/local/bin/virtualenvwrapper.sh
-
-# ------------------------ TINY CARE TERMINAL SETTINGS ----------------------- #
-# List of accounts to read the last tweet from, comma separated
-# The first in the list is read by the party parrot.
-export TTC_BOTS='tinycarebot,selfcare_bot,magicrealismbot'
-
-# Use this to have a different animal say a message in the big box.
-# export TTC_SAY_BOX='mario'
-
-# List of folders to look into for `git` commits, comma separated.
-export TTC_REPOS='~/Development/CuttleDev,~Development/OSS/Alive,~/Development/Conferences'
-
-# The max directory-depth to look for git repositories in
-# the directories defined with `TTC_REPOS`. Note that the deeper
-# the directory depth, the slower the results will be fetched.
-export TTC_REPOS_DEPTH=6
-
-# Which method is to be used to read the git commits ('gitstandup' | 'gitlog').
-# If you're having problems seeing your commits in the dahsboard, set
-# this value to gitlog.
-export TTC_GITBOT='gitlog'
-
-# Location/zip code to check the weather for. Both 90210 and "San Francisco, CA"
-# _should_ be ok (the zip code doesn't always work -- use a location
-# first, if you can). It's using weather.service.msn.com behind the curtains.
-export TTC_WEATHER='Denver'
-
-# Set to false if you're an imperial lover <3
-export TTC_CELSIUS=false
-
-# Unset this if you _don't_ want to use Twitter keys and want to
-# use web scraping instead.
-export TTC_APIKEYS=false
-
-# Refresh the dashboard every 20 minutes.
-export TTC_UPDATE_INTERVAL=20
-
-# Turn off terminal title
-export TTC_TERMINAL_TITLE=false
-
-# Twitter api keys
-export TTC_CONSUMER_KEY='...'
-export TTC_CONSUMER_SECRET='...'
-export TTC_ACCESS_TOKEN='...'
-export TTC_ACCESS_TOKEN_SECRET='...'
 
 # ------------------------------- PATH SETTINGS ------------------------------ #
 # custom path settings
 export MANPATH=/usr/local/man:$MANPATH
-export PATH=/usr/local/bin:$PATH  # give /usr/local/bin the highest precedence
-export PATH=$PATH:HOME/bin:/usr/local/opt/python/libexec/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin
-export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/9.6/bin
-export PATH=$PATH:$HOME/.fastlane/bin
-export PATH=$PATH:/usr/local/mysql/bin
+export PATH=/usr/local/bin:$PATH  # give /usr/local/bin the highest precedence!
+export PATH=$PATH:$HOME/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin
 
-# Android path settings
+# Fastlane path settings
+export PATH=$PATH:$HOME/.fastlane/bin
+
+# Java + Android path settings
 export ANDROID_HOME=$HOME/Library/Android/sdk
-export PATH=${PATH}:$ANDROID_HOME/bin
-export PATH=${PATH}:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$ANDROID_HOME/build-tools/28.0.2
+export PATH=$PATH:$ANDROID_HOME/bin:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$ANDROID_HOME/build-tools/28.0.2
 export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk1.8.0_181.jdk/Contents/Home"
 
 # Yarn path settings
@@ -191,20 +113,25 @@ if command -v pyenv 1>/dev/null 2>&1; then
   eval "$(pyenv init -)"
 fi
 
+# -------------------------- VIRTUALENVWRAPPER INIT -------------------------- #
+export VIRTUALENVWRAPPER_PYTHON=$(which python)
+source /usr/local/bin/virtualenvwrapper.sh
+
+# -------------------------- RVM INIT -------------------------- #
+source $HOME/.rvm/scripts/rvm
+
 # --------------------- PICKY ZSH SETTINGS (leave at end) -------------------- #
 APPEND_HISTORY="true"
 unsetopt share_history
 
-# tabtab source for serverless package
-# uninstall by removing these lines or running `tabtab uninstall serverless`
-[[ -f /Users/emilyemorehouse/Development/CuttleDev/Projects/Clients/Barbershop/DealPatrol/com-dealpatrol-api/node_modules/tabtab/.completions/serverless.zsh ]] && . /Users/emilyemorehouse/Development/CuttleDev/Projects/Clients/Barbershop/DealPatrol/com-dealpatrol-api/node_modules/tabtab/.completions/serverless.zsh
-# tabtab source for sls package
-# uninstall by removing these lines or running `tabtab uninstall sls`
-[[ -f /Users/emilyemorehouse/Development/CuttleDev/Projects/Clients/Barbershop/DealPatrol/com-dealpatrol-api/node_modules/tabtab/.completions/sls.zsh ]] && . /Users/emilyemorehouse/Development/CuttleDev/Projects/Clients/Barbershop/DealPatrol/com-dealpatrol-api/node_modules/tabtab/.completions/sls.zsh
-
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /usr/local/bin/vault vault
 
-# tabtab source for slss package
-# uninstall by removing these lines or running `tabtab uninstall slss`
-[[ -f /Users/emily/Development/CuttleDev/Projects/Clients/DealPatrol/dealpatrol.api/node_modules/tabtab/.completions/slss.zsh ]] && . /Users/emily/Development/CuttleDev/Projects/Clients/DealPatrol/dealpatrol.api/node_modules/tabtab/.completions/slss.zsh
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/emily/Development/Installed Tools/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/emily/Development/Installed Tools/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/emily/Development/Installed Tools/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/emily/Development/Installed Tools/google-cloud-sdk/completion.zsh.inc'; fi

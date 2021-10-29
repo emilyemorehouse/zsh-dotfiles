@@ -58,6 +58,9 @@
     dm = "!git branch --merged | grep -v '\\*' | xargs -n 1 git branch -d"
     # Display branch representation
     tree = log --all --graph --decorate --oneline --simplify-by-decoration
+    fco = "!f() { git fetch $1 $2 && git checkout $2; }; f"
+    mt = "!f() { git checkout origin/master && git checkout -b $2 && git cherry-pick $1 && git checkout master && git reset origin/master --hard && git checkout $2; }; f"
+    mtmain = "!f() { git checkout origin/main && git checkout -b $2 && git cherry-pick $1 && git checkout main && git reset origin/main --hard && git checkout $2; }; f"
 
 [apply]
     # Detect whitespace errors when applying a patch
@@ -79,6 +82,9 @@
     editor = vim
     pager = diff-so-fancy | less --tabs=4 -RFX
     ignorecase = false
+    editor = vimgit
+    editor = vim
+    autocrlf = input
 [color]
     # Use colors in Git commands that are capable of colored output when
     # outputting to the terminal. (This is the default setting in Git ≥ 1.8.4.)
@@ -134,4 +140,4 @@
 [init]
     templatedir = ~/.git-templates
 [gpg]
-    program = gpg
+	program = gpg
